@@ -23,7 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install conan
     - name: Create the Conan package
-      run: conan create .
+      run: |
+        conan profile detect
+        conan create .
     # - name: Upload Conan package
     #   run: |
     #     conan remote login conancenter <user> --password {{ secrets.CONAN_SECRET }}
