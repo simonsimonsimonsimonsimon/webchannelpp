@@ -1,0 +1,27 @@
+# This workflow will upload a Conan Package, whenver a tag is created in the form v*
+
+on:
+  push:
+    tags:
+      - v**
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+    - name: Install Conan
+      run: |
+        python -m pip install --upgrade pip
+        pip install conan
+    - name: Create the Conan package
+      run: conan create .
+      
