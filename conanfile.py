@@ -9,7 +9,7 @@ class WebchannelppRecipe(ConanFile):
     # channel = ? of (stable|testing)
     # Metadata
     description = "WebChannel++ is an implementation of Qt's WebChannel protocol in C++14."
-    license     = "GPLv2+ and LGPLv3"
+    license     = "GPL-2.0-only OR LGPL-3.0-only"
     author      = "Arno Rehn (a.rehn@menlosystems.com)"
     # topics = ?
     # homepage = ?
